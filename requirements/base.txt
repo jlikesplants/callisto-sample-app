@@ -1,2 +1,1 @@
-# Bring in Callisto-core 
 git+https://github.com/SexualHealthInnovations/callisto-core.git@release-7.18.16

@@ -1,16 +1,18 @@
+
 from django.conf.urls import url
 from django.contrib import admin
 
 from callisto.delivery.views import (
-    delete_report, edit_record_form_view, export_as_pdf, new_record_form_view,
-    submit_to_matching, submit_to_school, withdraw_from_matching,
+delete_report, edit_record_form_view, export_as_pdf, new_record_form_view,
+submit_to_matching, submit_to_school, withdraw_from_matching,
 )
 
 from callisto_sample_project.core.forms import (
-    CustomMatchReport, CustomReport, EncryptedFormWizard,
+CustomMatchReport, CustomReport, EncryptedFormWizard,
 )
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
@@ -51,4 +53,14 @@ urlpatterns = [
     url(r'^reports/delete/(?P<report_id>\d+)/$', delete_report,
         {'extra_context': {'test': 'custom context'}}, name="delete_report")
 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    # This allows the error pages to be debugged during development, just visit
+    # these url in browser to see how these error pages look like.
+    urlpatterns += [
+        url(r'^400/$', default_views.bad_request, kwargs={'exception': Exception('Bad Request!')}),
+        url(r'^403/$', default_views.permission_denied, kwargs={'exception': Exception('Permission Denied')}),
+        url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
+        url(r'^500/$', default_views.server_error),
 ]
