@@ -7,10 +7,6 @@ delete_report, edit_record_form_view, export_as_pdf, new_record_form_view,
 submit_to_matching, submit_to_school, withdraw_from_matching,
 )
 
-from callisto_sample_project.core.forms import (
-CustomMatchReport, CustomReport, EncryptedFormWizard,
-)
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),

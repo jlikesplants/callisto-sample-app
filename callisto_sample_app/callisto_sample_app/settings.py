@@ -37,6 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wizard_builder',
+    'callisto.evaluation',
+    'callisto.delivery',
+    'django.contrib.sites',
+
+    # Useful template tags:
+    # 'django.contrib.humanize',
+
+    # Admin
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CALLISTO_EVAL_PUBLIC_KEY = ''
+COORDINATOR_NAME = 'Jane Doe'
+SCHOOL_SHORTNAME = 'Respectful Org'
+APP_URL = 'localhost'
+DECRYPT_THROTTLE_RATE = '1/min'
