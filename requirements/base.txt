@@ -10,3 +10,5 @@ django-ratelimit==1.0.0
 zxcvbn-py3==1.1
 pytz==2016.6.1
 reportlab==3.3.0
+django-formtools==1.0
+django-environ==0.4.0

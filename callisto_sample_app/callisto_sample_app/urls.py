@@ -1,10 +1,17 @@
-
-from django.conf.urls import url
+from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic import TemplateView
+from django.conf import settings
+from django.views import defaults as default_views
 
 from callisto.delivery.views import (
 delete_report, edit_record_form_view, export_as_pdf, new_record_form_view,
 submit_to_matching, submit_to_school, withdraw_from_matching,
+)
+
+from .forms import (
+CustomMatchReport, CustomReport, EncryptedFormWizard,
 )
 
 urlpatterns = [
@@ -14,10 +21,6 @@ urlpatterns = [
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, include(admin.site.urls)),
-
-    # User management
-    url(r'^users/', include('callisto_sample_project.users.urls', namespace='users')),
-    url(r'^accounts/', include('allauth.urls')),
 
     # Callisto core views
     url(r'^reports/new/(?P<step>.+)/$', new_record_form_view,

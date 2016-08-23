@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import environ
+
+ROOT_DIR = environ.Path(__file__) - 3  # (callisto-sample-project/config/settings/common.py - 3 = callisto-sample-project/)
+APPS_DIR = ROOT_DIR.path('callisto_sample_app')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,3 +138,12 @@ COORDINATOR_NAME = 'Jane Doe'
 SCHOOL_SHORTNAME = 'Respectful Org'
 APP_URL = 'localhost'
 DECRYPT_THROTTLE_RATE = '1/min'
+ADMIN_URL = r'^admin/'
+
+# MEDIA CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+MEDIA_ROOT = str(APPS_DIR('media'))
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = '/media/'
