@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'callisto.evaluation',
     'callisto.delivery',
     'django.contrib.sites',
+    'callisto_sample_app',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -147,3 +148,14 @@ MEDIA_ROOT = str(APPS_DIR('media'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
+
+
+INSTALLED_APPS += ('webpack_loader',)
+# Webpack Local Stats file
+STATS_FILE = ROOT_DIR('webpack-stats.json')
+# Webpack config
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'STATS_FILE': STATS_FILE
+    }
+}
