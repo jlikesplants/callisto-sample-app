@@ -10,7 +10,7 @@ delete_report, edit_record_form_view, export_as_pdf, new_record_form_view,
 submit_to_matching, submit_to_school, withdraw_from_matching,
 )
 
-from .forms import (
+from .core.forms import (
 CustomMatchReport, CustomReport, EncryptedFormWizard,
 )
 
