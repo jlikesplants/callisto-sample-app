@@ -24,7 +24,7 @@ urlpatterns = [
 
     # User management
     url(r'^users/', include('callisto_sample_app.urls', namespace='users')),
-    url(r'^accounts/'),
+    url(r'^accounts/', include('allauth.urls')),
 
     # Callisto core views
     url(r'^reports/new/(?P<step>.+)/$', new_record_form_view,

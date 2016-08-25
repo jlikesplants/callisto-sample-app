@@ -19,6 +19,7 @@ APPS_DIR = ROOT_DIR.path('callisto_sample_app')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+env = environ.Env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -116,25 +117,25 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Allauth stuff
-# AUTHENTICATION_BACKENDS = (
-#     'django.contrib.auth.backends.ModelBackend',
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# )
-#
-# # Some really nice defaults
-# ACCOUNT_AUTHENTICATION_METHOD = 'username'
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-#
-# ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
-# ACCOUNT_ADAPTER = 'callisto_sample_project.users.adapters.AccountAdapter'
-# SOCIALACCOUNT_ADAPTER = 'callisto_sample_project.users.adapters.SocialAccountAdapter'
-#
-# # Custom user app defaults
-# # Select the correct user model
-# AUTH_USER_MODEL = 'users.User'
-# LOGIN_REDIRECT_URL = 'users:redirect'
-# LOGIN_URL = 'account_login'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# Some really nice defaults
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
+ACCOUNT_ADAPTER = 'callisto_sample_project.users.adapters.AccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'callisto_sample_project.users.adapters.SocialAccountAdapter'
+
+# Custom user app defaults
+# Select the correct user model
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = 'users:redirect'
+LOGIN_URL = 'account_login'
 
 
 
