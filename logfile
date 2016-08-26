@@ -13,3 +13,7 @@ FATAL:  database "justinewinnie" does not exist
 FATAL:  role "test" does not exist
 FATAL:  database "justine" does not exist
 FATAL:  database "callisto" does not exist
+FATAL:  database "syncdb" does not exist
+ERROR:  duplicate key value violates unique constraint "django_site_domain_a2e37b91_uniq"
+DETAIL:  Key (domain)=(example.com) already exists.
+STATEMENT:  INSERT INTO "django_site" ("domain", "name") VALUES ('example.com', 'example.com') RETURNING "django_site"."id"
