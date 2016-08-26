@@ -1,0 +1,15 @@
+LOG:  database system was shut down at 2016-08-26 13:14:52 PDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "test" does not exist
+FATAL:  role "test" does not exist
+FATAL:  role "test" does not exist
+FATAL:  database "du" does not exist
+FATAL:  database "justinewinnie" does not exist
+FATAL:  database "du" does not exist
+FATAL:  database "u" does not exist
+FATAL:  database "justinewinnie" does not exist
+FATAL:  role "test" does not exist
+FATAL:  database "justine" does not exist
+FATAL:  database "callisto" does not exist

@@ -13,3 +13,10 @@ reportlab==3.3.0
 django-formtools==1.0
 django-environ==0.4.0
 psycopg2==2.6.2
+
+# Models
+django-model-utils==2.5
+
+# For user registration, either via email or social
+# Well-built with regular release cycles!
+# django-allauth==0.25.2
