@@ -48,7 +48,8 @@
               </li>
             </ul>
 
-            <ul class="nav navbar-nav pull-xs-right">
+            {%comment%}
+            <!-- <ul class="nav navbar-nav pull-xs-right">
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
@@ -64,7 +65,8 @@
                   <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
                 </li>
               {% endif %}
-            </ul>
+            </ul> -->
+            {%endcomment%}
           </div>
         </div>
       </nav>
@@ -104,10 +106,12 @@
       <!-- Your stuff: Third-party javascript libraries go here -->
 
       <!-- Webpack bundles -->
+      {%comment%}
       {% render_bundle 'vendor' %}
       {# TODO: Investigate what this `common` bundle is for and why is not being built by webpack #}
       {# {% render_bundle 'common' %} #}
       {% render_bundle 'main' %}
+      {%endcomment%}
 
     {% endblock javascript %}
   </body>

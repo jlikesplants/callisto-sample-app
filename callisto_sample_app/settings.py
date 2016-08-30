@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'callisto.delivery',
     'django.contrib.sites',
     'callisto_sample_app',
+    'polymorphic',
     # 'allauth',  # registration
     # 'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
