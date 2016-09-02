@@ -68,7 +68,7 @@ callisto-core is built on top of django-wizard-builder, another open source Djan
 
 13. Load the site at the port specified in your terminal, with the extension '/admin'. Django loads its admin dashboard from the models we provide it, so you should see something similar to this Admin dashboard screenshot.
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Image of Django admin screenshot](Admin dashboard.png?raw=true "Admin dashboard")
 
 
 
